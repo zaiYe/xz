@@ -18,13 +18,14 @@
     download = document.getElementById('download'),
     canvas = document.getElementById('canvas'),
     ctx = canvas.getContext('2d'),
-    imgUrl = './images/cjl.png';
+    imgUrl = 'https://raw.githubusercontent.com/zaiYe/xz/master/images/cjl.png';
 
   var img = new Image();
   img.src = imgUrl;
   img.crossOrigin = 'Anonymous';
+  console.info('初始化开始');
   img.onload = function () {
-    console.info('加载完成');
+    console.info('图片加载完成');
     canvas.width = this.width;
     canvas.height = this.height;
     ctx.drawImage(this, 0, 0);
