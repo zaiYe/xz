@@ -13,30 +13,32 @@
 </body>
 </html>
 <script>
-  var colorInput = document.getElementById('color'),
-    submitBtn = document.getElementById('submit'),
-    download = document.getElementById('download'),
-    canvas = document.getElementById('canvas'),
-    ctx = canvas.getContext('2d'),
-    imgUrl = 'https://raw.githubusercontent.com/zaiYe/xz/master/images/cjl.png';
+  window.onload = function(){
+    var colorInput = document.getElementById('color'),
+      submitBtn = document.getElementById('submit'),
+      download = document.getElementById('download'),
+      canvas = document.getElementById('canvas'),
+      ctx = canvas.getContext('2d'),
+      imgUrl = 'https://raw.githubusercontent.com/zaiYe/xz/master/images/cjl.png';
 
-  var img = new Image();
-  img.src = imgUrl;
-  img.crossOrigin = 'Anonymous';
-  console.info('初始化开始');
-  img.onload = function () {
-    console.info('图片加载完成');
-    canvas.width = this.width;
-    canvas.height = this.height;
-    ctx.drawImage(this, 0, 0);
-  };
+    var img = new Image();
+    img.src = imgUrl;
+    img.crossOrigin = 'Anonymous';
+    console.info('初始化开始');
+    img.onload = function () {
+      console.info('图片加载完成');
+      canvas.width = this.width;
+      canvas.height = this.height;
+      ctx.drawImage(this, 0, 0);
+    };
 
 
-  submitBtn.addEventListener('click', function (e) {
-    ctx.fillStyle = colorInput.value;
-    ctx.fillRect(0, 0, img.width, img.height);
-    ctx.drawImage(img, 0, 0);
-    download.href = canvas.toDataURL('image/png');
-  }, false);
+    submitBtn.addEventListener('click', function (e) {
+      ctx.fillStyle = colorInput.value;
+      ctx.fillRect(0, 0, img.width, img.height);
+      ctx.drawImage(img, 0, 0);
+      download.href = canvas.toDataURL('image/png');
+    }, false);
+  }
 
 </script>
