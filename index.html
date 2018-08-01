@@ -38,6 +38,7 @@
       ctx.fillRect(0, 0, img.width, img.height);
       ctx.drawImage(img, 0, 0);
       download.href = canvas.toDataURL('image/png');
+      console.info('改变颜色完成');
     }, false);
   }
 
