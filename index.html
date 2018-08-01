@@ -24,6 +24,7 @@
   img.src = imgUrl;
   img.crossOrigin = 'Anonymous';
   img.onload = function () {
+    console.info('加载完成');
     canvas.width = this.width;
     canvas.height = this.height;
     ctx.drawImage(this, 0, 0);
